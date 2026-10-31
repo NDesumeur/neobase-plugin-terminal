@@ -1,0 +1,19 @@
+{
+  "id": "neobase.terminal",
+  "name": "Terminal",
+  "version": "1.0.0",
+  "author": "NDesumeur",
+  "description": "PowerShell dans NeoBase, ligne par ligne, avec historique.",
+  "icon": "icon.png",
+  "entry": "index.js",
+  "view": "terminal",
+  "neobase": ">=4.0.0",
+  "type": "app",
+  "category": "Système",
+  "mobile": false,
+  "system": false,
+  "dependencies": {},
+  "permissions": [
+    "full"
+  ]
+}
