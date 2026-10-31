@@ -1,0 +1,9 @@
+{
+  "pluginId": "neobase.terminal",
+  "repo": "NDesumeur/neobase-plugin-terminal",
+  "version": "1.0.1",
+  "sha256": "4714b1d6461c09604b4a52ca6ed13bb3063baf3fd0db38fcb99df2f3e82077eb",
+  "approvedAt": "2026-10-31T17:51:20.985Z",
+  "neobase": ">=4.0.0",
+  "signature": "FTfoWPsj9yAjTo6ZjiOatnks4oyjP0UIYAHll76Nq0abt7n1rFERGWYbtu3nlye10PkRhkCmiFjKieKZEGlhDw=="
+}
