@@ -1,6 +1,6 @@
 {
-  "pluginId": "neobase.terminal",
-  "repo": "NDesumeur/neobase-plugin-terminal",
+  "pluginId": "neodex.terminal",
+  "repo": "NDesumeur/neodex-plugin-terminal",
   "version": "1.0.2",
   "sha256": "c8dc6979356d5402ada98c52054ff20bd842630d09611f63e2e891a66241d16d",
   "approvedAt": "2026-11-01T00:16:26.473Z",

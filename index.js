@@ -1,6 +1,6 @@
 // Terminal : ton appli d'origine (HTML et code inchangés), livrée en plugin.
-// Ses données sont dans le dossier du plugin, que NeoBase sauvegarde (synchro cloud et sauvegardes) ; à la première ouverture elle reprend ce que tu avais dans NeoBase.
-// Elle tourne dans le bac à sable de NeoBase, avec ses outils d'interface (ctx.host) et seulement les autorisations de son plugin.json.
+// Ses données sont dans le dossier du plugin, que NeoDex sauvegarde (synchro cloud et sauvegardes) ; à la première ouverture elle reprend ce que tu avais dans NeoDex.
+// Elle tourne dans le bac à sable de NeoDex, avec ses outils d'interface (ctx.host) et seulement les autorisations de son plugin.json.
 const HTML = "<div class=\"ptBar\"><span class=\"ptName\">Terminal · PowerShell</span><button class=\"btn px\" id=\"tmClear\">Effacer</button><button class=\"btn px\" id=\"tmRestart\" title=\"Arrête aussi une commande qui ne finit pas\">Redémarrer</button></div>\n      <pre id=\"tmOut\"></pre>\n      <div class=\"tmLine\"><span id=\"tmPrompt\">PS&gt;</span><input id=\"tmIn\" spellcheck=\"false\" autocomplete=\"off\"></div>";
 /*CSS-MOVED*/ const CSS = `#tmOut{flex:1;margin:0;padding:14px 18px;overflow:auto;background:#05010b;color:#d9c6ff;font:14px/1.45 Consolas,'Cascadia Mono',monospace;white-space:pre-wrap;word-break:break-word;user-select:text}
 #tmOut .err{color:#ff7a90}
@@ -10,10 +10,10 @@ const HTML = "<div class=\"ptBar\"><span class=\"ptName\">Terminal · PowerShell
 #tmPrompt{color:#8ee8a0;white-space:nowrap}
 #tmIn{all:unset;flex:1;color:#fff;font:14px Consolas,monospace}
 .ptName{color:#fff;font-size:15px;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin-right:8px}
-`;  // le style de ce plugin (il utilise les variables du thème de NeoBase)
+`;  // le style de ce plugin (il utilise les variables du thème de NeoDex)
 export default async function (ctx) {
   const view = ctx.view;
-  if (!ctx.host) { view.textContent = "Ce plugin doit être approuvé par NeoBase pour s'ouvrir."; return; }
+  if (!ctx.host) { view.textContent = "Ce plugin doit être approuvé par NeoDex pour s'ouvrir."; return; }
   const host = ctx.host, { el, toast, sfx, ask, newTab, pixIcon, PIX, WX } = host;
   const folder = ctx.folder, legacy = ctx.legacy || {};
   ctx.host.addStyle(CSS);
@@ -33,7 +33,7 @@ function tmData({kind, data}) {
   $('tmPrompt').textContent = 'PS ' + (tmCwd || '') + '>';
 }
 async function tmOpen() {
-  if (!tmStarted) { tmStarted = true; $('tmOut').replaceChildren(); tmPrint('PowerShell dans NeoBase · tape une commande puis Entrée (↑ ↓ : historique). Les programmes plein écran (vim, ssh interactif…) ne marchent pas ici.\n', 'hint'); await neo.termStart(); }
+  if (!tmStarted) { tmStarted = true; $('tmOut').replaceChildren(); tmPrint('PowerShell dans NeoDex · tape une commande puis Entrée (↑ ↓ : historique). Les programmes plein écran (vim, ssh interactif…) ne marchent pas ici.\n', 'hint'); await neo.termStart(); }
   setTimeout(() => $('tmIn').focus());
 }
 $('tmIn').onkeydown = e => {
