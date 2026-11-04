@@ -1,6 +1,6 @@
 // Terminal : ton appli d'origine (HTML et code inchangés), livrée en plugin.
 // Ses données sont dans le dossier du plugin, que NeoBase sauvegarde (synchro cloud et sauvegardes) ; à la première ouverture elle reprend ce que tu avais dans NeoBase.
-// Elle demande l'accès complet pour utiliser les outils d'interface de NeoBase. NeoBase ne l'ouvre que si elle est signée.
+// Elle tourne dans le bac à sable de NeoBase, avec ses outils d'interface (ctx.host) et seulement les autorisations de son plugin.json.
 const HTML = "<div class=\"ptBar\"><span class=\"ptName\">Terminal · PowerShell</span><button class=\"btn px\" id=\"tmClear\">Effacer</button><button class=\"btn px\" id=\"tmRestart\" title=\"Arrête aussi une commande qui ne finit pas\">Redémarrer</button></div>\n      <pre id=\"tmOut\"></pre>\n      <div class=\"tmLine\"><span id=\"tmPrompt\">PS&gt;</span><input id=\"tmIn\" spellcheck=\"false\" autocomplete=\"off\"></div>";
 /*CSS-MOVED*/ const CSS = `#tmOut{flex:1;margin:0;padding:14px 18px;overflow:auto;background:#05010b;color:#d9c6ff;font:14px/1.45 Consolas,'Cascadia Mono',monospace;white-space:pre-wrap;word-break:break-word;user-select:text}
 #tmOut .err{color:#ff7a90}
